@@ -1,0 +1,4 @@
+# Optional profile: spring.profiles.active=dev
+logging:
+  level:
+    com.olxspa: debug
