@@ -2,6 +2,17 @@
 
 Single-page marketplace-style app: **Angular** frontend, **Spring Boot** (Maven) API, **MySQL** with **Flyway** migrations, layered packages, validation, and a global REST exception handler.
 
+## Documentation
+
+- Main index: `docs/README.md`
+- Workflow: `docs/01-workflow-overview.md`
+- Setup/tools: `docs/02-setup-and-tools.md`
+- Features (separate): `docs/03-feature-guides.md`
+- Exceptions and bug handling: `docs/04-exception-and-bug-handling.md`
+- Debugging playbook: `docs/05-debugging-playbook.md`
+- Build from scratch: `docs/06-build-from-scratch.md`
+- Roadmap and suggestions: `docs/07-roadmap-and-suggestions.md`
+
 ## Layout
 
 | Path | Description |
