@@ -20,6 +20,7 @@ mkdir frontend
    - MySQL Driver
    - Flyway
    - Lombok
+   - Springdoc OpenAPI UI
 2. Add `application.yml` with datasource and CORS.
 3. Add migrations:
    - `V1__init_schema.sql` for tables/indexes
@@ -32,6 +33,7 @@ mkdir frontend
    - Services with business rules
    - Controllers with `/api/v1` endpoints
    - Global exception handler
+   - OpenAPI endpoints for API documentation
 6. Add Maven wrapper and compile.
 
 Run:
@@ -85,6 +87,19 @@ docker compose up -d
 
 Or setup MySQL manually and point backend datasource config to it.
 
+## 4.1) DB auto vs manual
+
+- Auto DB create:
+  - Keep `createDatabaseIfNotExist=true` in JDBC URL
+  - Ensure DB user has CREATE DATABASE permission
+- Manual DB create:
+  - Create `olx_spa` manually
+  - Flyway still creates tables automatically
+
+Important:
+- Tables should be managed by Flyway migrations.
+- Avoid manual table creation in normal project flow.
+
 ## 5) Final verification checklist
 
 - Backend starts without Flyway errors.
@@ -93,3 +108,5 @@ Or setup MySQL manually and point backend datasource config to it.
 - Can register user.
 - Can create and archive listing.
 - Error banner appears for invalid requests.
+- Swagger UI opens successfully.
+- Postman collection requests run as expected.

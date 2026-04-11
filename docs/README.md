@@ -11,3 +11,8 @@ Use this folder as the main guide for development, operations, and future growth
 - `docs/05-debugging-playbook.md` - frontend/backend debugging steps
 - `docs/06-build-from-scratch.md` - manual creation steps from zero
 - `docs/07-roadmap-and-suggestions.md` - upcoming features and architecture suggestions
+- `docs/08-swagger-and-postman.md` - OpenAPI/Swagger and Postman API testing
+- `docs/09-database-setup-auto-vs-manual.md` - DB setup options and environment config
+- `docs/10-best-practices-and-standards.md` - coding standards and project guidelines
+- `docs/11-frontend-ui-architecture.md` - detailed UI components/modules/design decisions
+- `docs/12-api-reference-and-count.md` - full API list, API count, and endpoint explanations

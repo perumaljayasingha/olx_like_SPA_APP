@@ -28,6 +28,7 @@ Frontend:
 - Component: listing list screen
 - Service: `ListingService.search()`
 - UI: filter panel + paginated cards
+- India adaptation: prices rendered in INR format (`en-IN`)
 
 ## Feature: Listing Detail
 
@@ -96,6 +97,20 @@ Frontend:
 - Component: register screen
 - Service: `AuthService.register()`
 - Stores returned user in `localStorage`
+
+## Feature: API Documentation and Testing
+
+Purpose:
+- Make APIs easy to explore and test for developers and QA.
+
+Backend:
+- Swagger/OpenAPI endpoints:
+  - `/swagger-ui.html`
+  - `/v3/api-docs`
+
+Testing assets:
+- Postman collection:
+  - `docs/postman/olx-spa-api.postman_collection.json`
 
 ## Feature: Global API Error UX
 

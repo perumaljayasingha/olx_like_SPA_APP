@@ -31,7 +31,7 @@ import { ListingService } from '../../core/services/listing.service';
         <div class="panel">
           <div class="panel-inner">
             <h1 class="title">{{ l.title }}</h1>
-            <p class="price">{{ l.price | currency: 'USD' : 'symbol' : '1.0-2' }}</p>
+            <p class="price">{{ l.price | currency: 'INR' : 'symbol' : '1.0-2' }}</p>
 
             <div class="chips">
               @if (l.city) {
@@ -41,7 +41,7 @@ import { ListingService } from '../../core/services/listing.service';
               <span class="chip chip-status">{{ l.listingStatus }}</span>
             </div>
 
-            <p class="listed">Listed {{ l.createdAt | date: 'medium' }}</p>
+            <p class="listed">Posted {{ l.createdAt | date: 'medium' }}</p>
 
             <section class="block">
               <h2 class="block-title">Description</h2>
@@ -349,7 +349,7 @@ export class ListingDetailComponent implements OnInit {
   }
 
   archive(l: Listing): void {
-    if (!confirm('Archive this listing? It will disappear from search results.')) {
+    if (!confirm('Archive this ad? It will disappear from active search results.')) {
       return;
     }
     this.archiving.set(true);

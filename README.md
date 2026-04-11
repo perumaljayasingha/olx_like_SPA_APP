@@ -12,6 +12,11 @@ Single-page marketplace-style app: **Angular** frontend, **Spring Boot** (Maven)
 - Debugging playbook: `docs/05-debugging-playbook.md`
 - Build from scratch: `docs/06-build-from-scratch.md`
 - Roadmap and suggestions: `docs/07-roadmap-and-suggestions.md`
+- Swagger and Postman testing: `docs/08-swagger-and-postman.md`
+- Database auto/manual setup: `docs/09-database-setup-auto-vs-manual.md`
+- Best practices and standards: `docs/10-best-practices-and-standards.md`
+- Frontend UI architecture: `docs/11-frontend-ui-architecture.md`
+- API reference and count: `docs/12-api-reference-and-count.md`
 
 ## Layout
 
@@ -39,6 +44,7 @@ cd backend
 ```
 
 API: `http://localhost:8080` — e.g. `GET http://localhost:8080/api/v1/listings`
+Swagger UI: `http://localhost:8080/swagger-ui.html`
 
 ## Run the SPA
 
@@ -49,6 +55,17 @@ npm start
 ```
 
 App: `http://localhost:4200` (dev build uses `environment.development.ts` → API `http://localhost:8080`).
+
+## Environment variables (recommended)
+
+Backend supports:
+
+- `DB_URL`
+- `DB_USERNAME`
+- `DB_PASSWORD`
+
+Example env file:
+- `backend/.env.example`
 
 ## API surface (v1)
 
