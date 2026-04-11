@@ -16,7 +16,7 @@ import { ListingService } from '../../core/services/listing.service';
 
     <div class="layout">
       <header class="intro">
-        <h1 class="page-title">Post an ad</h1>
+        <h1 class="page-title">Post your ad</h1>
         <p class="page-sub">Add a clear title, honest condition, and a strong photo link — buyers decide in seconds.</p>
         @if (!auth.currentUser()) {
           <div class="hint">
@@ -44,7 +44,7 @@ import { ListingService } from '../../core/services/listing.service';
           </label>
 
           <label class="field">
-            <span class="label">Price (USD) <span class="req">*</span></span>
+            <span class="label">Price (INR) <span class="req">*</span></span>
             <input type="number" step="0.01" formControlName="price" class="input" />
           </label>
 
@@ -69,7 +69,7 @@ import { ListingService } from '../../core/services/listing.service';
 
           <label class="field">
             <span class="label">City</span>
-            <input type="text" formControlName="city" class="input" placeholder="e.g. Austin" />
+            <input type="text" formControlName="city" class="input" placeholder="e.g. Bengaluru" />
           </label>
 
           <label class="field field-full">
@@ -85,7 +85,7 @@ import { ListingService } from '../../core/services/listing.service';
 
         <div class="footer">
           <button type="submit" class="btn btn-primary submit" [disabled]="form.invalid || saving()">
-            {{ saving() ? 'Publishing…' : 'Publish listing' }}
+            {{ saving() ? 'Publishing...' : 'Publish listing' }}
           </button>
         </div>
       </form>

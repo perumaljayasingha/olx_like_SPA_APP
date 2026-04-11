@@ -15,8 +15,8 @@ import { ListingService } from '../../core/services/listing.service';
   template: `
     <header class="page-head">
       <div>
-        <h1 class="page-title">Browse listings</h1>
-        <p class="page-sub">Fresh picks near you — filter by category or search keywords.</p>
+        <h1 class="page-title">Browse listings in India</h1>
+        <p class="page-sub">Fresh local picks across India — filter by category or search keywords.</p>
       </div>
       <a routerLink="/listings/new" class="head-cta btn btn-primary">+ Post an ad</a>
     </header>
@@ -38,7 +38,7 @@ import { ListingService } from '../../core/services/listing.service';
             type="search"
             [(ngModel)]="query"
             (keyup.enter)="reload()"
-            placeholder="Try “bike”, “phone”, “desk”…"
+            placeholder="Try 'bike', 'phone', 'scooter', 'flat'..."
             class="input"
             autocomplete="off"
           />
@@ -84,7 +84,7 @@ import { ListingService } from '../../core/services/listing.service';
               </div>
               <div class="body">
                 <h2 class="card-title">{{ l.title }}</h2>
-                <p class="price">{{ l.price | currency: 'USD' : 'symbol' : '1.0-0' }}</p>
+                <p class="price">{{ l.price | currency: 'INR' : 'symbol' : '1.0-0' }}</p>
                 <p class="meta">
                   @if (l.city) {
                     <span class="meta-pill">{{ l.city }}</span>

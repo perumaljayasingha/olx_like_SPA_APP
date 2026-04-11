@@ -28,8 +28,16 @@ docker compose up -d
 
 Option B: Manual MySQL
 
-- Create DB: `olx_spa`
-- Update credentials in `backend/src/main/resources/application.yml`
+- Create DB: `olx_spa` (optional, URL supports auto-create if permission exists)
+- Preferred: set environment variables (`DB_URL`, `DB_USERNAME`, `DB_PASSWORD`)
+
+Example:
+
+```powershell
+$env:DB_URL="jdbc:mysql://localhost:3306/olx_spa?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=utf8"
+$env:DB_USERNAME="root"
+$env:DB_PASSWORD="root"
+```
 
 ## 2) Start backend
 
@@ -39,6 +47,7 @@ cd backend
 ```
 
 Backend URL: `http://localhost:8080`
+Swagger URL: `http://localhost:8080/swagger-ui.html`
 
 ## 3) Start frontend
 

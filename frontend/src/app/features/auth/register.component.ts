@@ -12,7 +12,7 @@ import { AuthService } from '../../core/services/auth.service';
       <div class="card">
         <div class="card-accent" aria-hidden="true"></div>
         <div class="card-body">
-          <h1 class="page-title">Join NearBuy</h1>
+          <h1 class="page-title">Join Bazaar India</h1>
           <p class="sub">Create an account to post ads under your name. Passwords are secured with BCrypt.</p>
 
           <form [formGroup]="form" (ngSubmit)="submit()" class="form">
@@ -44,7 +44,7 @@ import { AuthService } from '../../core/services/auth.service';
           </form>
 
           <p class="foot">
-            Already browsing?
+            Already exploring listings?
             <a routerLink="/listings">Back to listings</a>
           </p>
         </div>

@@ -7,28 +7,27 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <section class="hero">
-      <div class="hero-badge">Trusted local marketplace</div>
-      <h1 class="hero-title">Turn unused items into <em>cash</em>, fast.</h1>
+      <div class="hero-badge">India trusted local marketplace</div>
+      <h1 class="hero-title">Turn unused items into <em>money</em>, fast in India.</h1>
       <p class="hero-lead">
-        List in minutes, chat-ready profiles, and a calm browsing experience — all in one lightweight
-        single-page app.
+        Post in minutes, find nearby buyers, and discover trusted local deals across Indian cities.
       </p>
       <div class="hero-actions">
-        <a routerLink="/listings" class="btn btn-primary btn-lg">Explore listings</a>
-        <a routerLink="/listings/new" class="btn btn-secondary btn-lg">Post your first ad</a>
+        <a routerLink="/listings" class="btn btn-primary btn-lg">Explore India listings</a>
+        <a routerLink="/listings/new" class="btn btn-secondary btn-lg">Post your first ad in India</a>
       </div>
       <ul class="hero-stats" aria-label="Highlights">
         <li>
           <strong>Simple</strong>
-          <span>No clutter — just search, filter, and buy.</span>
+          <span>Simple flow — search, filter, and buy near your location.</span>
         </li>
         <li>
           <strong>Fast</strong>
-          <span>Built as a SPA with a snappy Spring Boot API.</span>
+          <span>Built for speed with Angular SPA and Spring Boot backend.</span>
         </li>
         <li>
           <strong>Safe basics</strong>
-          <span>Passwords hashed server-side; you control your data.</span>
+          <span>Secure basics: server-side password hashing and controlled data flow.</span>
         </li>
       </ul>
     </section>
