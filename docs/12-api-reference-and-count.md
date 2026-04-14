@@ -4,7 +4,7 @@
 
 ## Business APIs
 
-There are **7 business APIs** under `/api/v1`:
+There are **11 business APIs** under `/api/v1`:
 
 1. `GET /api/v1/categories`
 2. `GET /api/v1/listings`
@@ -12,7 +12,11 @@ There are **7 business APIs** under `/api/v1`:
 4. `POST /api/v1/listings`
 5. `PUT /api/v1/listings/{id}`
 6. `DELETE /api/v1/listings/{id}?sellerId=...`
-7. `POST /api/v1/auth/register`
+7. `POST /api/v1/auth/register/request-otp`
+8. `POST /api/v1/auth/register/verify-otp`
+9. `POST /api/v1/auth/login/request-otp`
+10. `POST /api/v1/auth/login/verify-otp`
+11. `POST /api/v1/auth/logout`
 
 ## Documentation APIs
 
@@ -21,7 +25,7 @@ There are **2 documentation endpoints**:
 1. `GET /swagger-ui.html`
 2. `GET /v3/api-docs`
 
-So, total including docs endpoints = **9 endpoints**.
+So, total including docs endpoints = **13 endpoints**.
 
 ---
 
@@ -105,12 +109,11 @@ Sample JSON:
 - Purpose: soft remove listing from active search results.
 - Response: `204 No Content`
 
-## 7) Register user
+## 7) Register request OTP
 
 - Method: `POST`
-- URL: `/api/v1/auth/register`
-- Purpose: create user account.
-- Password is hashed with BCrypt on backend.
+- URL: `/api/v1/auth/register/request-otp`
+- Purpose: validate registration data and send OTP to mobile.
 
 Sample JSON:
 
@@ -120,5 +123,65 @@ Sample JSON:
   "password": "StrongPass123",
   "fullName": "Rahul Sharma",
   "phone": "+919876543210"
+}
+```
+
+## 8) Register verify OTP
+
+- Method: `POST`
+- URL: `/api/v1/auth/register/verify-otp`
+- Purpose: verify OTP and create account.
+- Returns: session token + user profile.
+
+Sample JSON:
+
+```json
+{
+  "phone": "+919876543210",
+  "otp": "123456"
+}
+```
+
+## 9) Login request OTP
+
+- Method: `POST`
+- URL: `/api/v1/auth/login/request-otp`
+- Purpose: send OTP for existing user mobile.
+
+Sample JSON:
+
+```json
+{
+  "phone": "+919876543210"
+}
+```
+
+## 10) Login verify OTP
+
+- Method: `POST`
+- URL: `/api/v1/auth/login/verify-otp`
+- Purpose: verify OTP and create auth session.
+- Returns: session token + user.
+
+Sample JSON:
+
+```json
+{
+  "phone": "+919876543210",
+  "otp": "123456"
+}
+```
+
+## 11) Logout
+
+- Method: `POST`
+- URL: `/api/v1/auth/logout`
+- Purpose: invalidate active session token.
+
+Sample JSON:
+
+```json
+{
+  "token": "session-token-string"
 }
 ```

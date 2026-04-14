@@ -39,7 +39,7 @@
       }
     },
     {
-      "name": "Register User",
+      "name": "Register Request OTP",
       "request": {
         "method": "POST",
         "header": [
@@ -52,7 +52,75 @@
           "mode": "raw",
           "raw": "{\n  \"email\": \"rahul@example.com\",\n  \"password\": \"StrongPass123\",\n  \"fullName\": \"Rahul Sharma\",\n  \"phone\": \"+919876543210\"\n}"
         },
-        "url": "{{baseUrl}}/api/v1/auth/register"
+        "url": "{{baseUrl}}/api/v1/auth/register/request-otp"
+      }
+    },
+    {
+      "name": "Register Verify OTP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"+919876543210\",\n  \"otp\": \"123456\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/register/verify-otp"
+      }
+    },
+    {
+      "name": "Login Request OTP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"+919876543210\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/login/request-otp"
+      }
+    },
+    {
+      "name": "Login Verify OTP",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"phone\": \"+919876543210\",\n  \"otp\": \"123456\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/login/verify-otp"
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"token\": \"{{authToken}}\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/logout"
       }
     },
     {
@@ -122,6 +190,10 @@
     {
       "key": "listingId",
       "value": "1"
+    },
+    {
+      "key": "authToken",
+      "value": ""
     }
   ]
 }

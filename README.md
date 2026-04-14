@@ -17,6 +17,8 @@ Single-page marketplace-style app: **Angular** frontend, **Spring Boot** (Maven)
 - Best practices and standards: `docs/10-best-practices-and-standards.md`
 - Frontend UI architecture: `docs/11-frontend-ui-architecture.md`
 - API reference and count: `docs/12-api-reference-and-count.md`
+- Auth OTP + testing + logging: `docs/13-auth-otp-testing-and-logging.md`
+- Automated testing steps: `docs/14-automated-testing-from-scratch.md`
 
 ## Layout
 
