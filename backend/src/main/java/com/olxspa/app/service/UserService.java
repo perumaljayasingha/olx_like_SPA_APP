@@ -21,22 +21,37 @@ public class UserService {
 
     @Transactional
     public UserResponse register(RegisterRequest request) {
-        if (userRepository.existsByEmailIgnoreCase(request.getEmail())) {
-            throw BusinessException.duplicateEmail();
-        }
-        User user =
-                User.builder()
-                        .email(request.getEmail().trim().toLowerCase())
-                        .passwordHash(passwordEncoder.encode(request.getPassword()))
-                        .fullName(request.getFullName().trim())
-                        .phone(request.getPhone() != null ? request.getPhone().trim() : null)
-                        .build();
-        user = userRepository.save(user);
+        User user = createUser(request);
         return UserMapper.toResponse(user);
     }
 
     @Transactional(readOnly = true)
     public User getByIdOrThrow(Long id) {
         return userRepository.findById(id).orElseThrow(() -> ResourceNotFoundException.user(id));
+    }
+
+    @Transactional(readOnly = true)
+    public User getByPhoneOrThrow(String phone) {
+        return userRepository.findByPhone(phone).orElseThrow(() -> BusinessException.authRequired());
+    }
+
+    @Transactional
+    public User createUser(RegisterRequest request) {
+        String email = request.getEmail().trim().toLowerCase();
+        String phone = request.getPhone().trim();
+        if (userRepository.existsByEmailIgnoreCase(email)) {
+            throw BusinessException.duplicateEmail();
+        }
+        if (userRepository.existsByPhone(phone)) {
+            throw BusinessException.duplicatePhone();
+        }
+        User user =
+                User.builder()
+                        .email(email)
+                        .passwordHash(passwordEncoder.encode(request.getPassword()))
+                        .fullName(request.getFullName().trim())
+                        .phone(phone)
+                        .build();
+        return userRepository.save(user);
     }
 }

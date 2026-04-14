@@ -3,11 +3,15 @@ backend/target/
 backend/.classpath
 backend/.project
 backend/.settings/
+backend/.env
+
 
 # Node / Angular
 frontend/node_modules/
 frontend/dist/
 frontend/.angular/
+frontend/cypress/screenshots/
+frontend/cypress/videos/
 
 # IDE
 .idea/

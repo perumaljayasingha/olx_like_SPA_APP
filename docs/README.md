@@ -16,3 +16,5 @@ Use this folder as the main guide for development, operations, and future growth
 - `docs/10-best-practices-and-standards.md` - coding standards and project guidelines
 - `docs/11-frontend-ui-architecture.md` - detailed UI components/modules/design decisions
 - `docs/12-api-reference-and-count.md` - full API list, API count, and endpoint explanations
+- `docs/13-auth-otp-testing-and-logging.md` - OTP auth, automated tests, and debug logging
+- `docs/14-automated-testing-from-scratch.md` - step-by-step test execution guide

@@ -37,7 +37,9 @@ Collection file:
 5. Ensure variable `baseUrl` is `http://localhost:8080`.
 6. Run requests in order:
    - categories/listings
-   - register
+   - register OTP request + verify
+   - login OTP request + verify
+   - logout
    - create/update/archive listing
 
 ## Sample test sequence
